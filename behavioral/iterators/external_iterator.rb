@@ -4,22 +4,22 @@ class PlaylistIterator
   attr_accessor :index
 
   def initialize(playlist)
-  	@playlist = playlist.songs
+    @playlist = playlist.songs
     @index = 0
   end
 
   def has_next?
-  	@index < @playlist.length
+    @index < @playlist.length
   end
 
   def song
-  	@playlist[@index]
+    @playlist[@index]
   end
 
   def next_song
-  	song = @playlist[@index]
-  	@index += 1
-  	song
+    song = @playlist[@index]
+    @index += 1
+    song
   end
 end
 
@@ -28,8 +28,8 @@ class Playlist
   attr_accessor :name
 
   def initialize(name)
-  	@name = name
-  	@songlist = []
+    @name = name
+    @songlist = []
   end
 
   def add_song(song)
@@ -37,7 +37,7 @@ class Playlist
   end	
 
   def delete_song(song)
-  	@songlist.delete(song)
+    @songlist.delete(song)
   end	
 
   # for the External Iterator we need to provide the a way to access the array to the outside
