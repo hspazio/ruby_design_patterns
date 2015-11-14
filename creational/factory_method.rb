@@ -17,7 +17,7 @@ class Ship
   attr_reader :speed
 
   def initialize
-  	raise NotImplementedError
+    raise NotImplementedError
   end
 end
 
@@ -32,25 +32,21 @@ end
 # Role > ConcreteProduct
 class Rocket < Ship
   def initialize
-  	@damage = 100
-  	@speed  = 20_000
+    @damage = 100
+    @speed  = 20_000
   end
 end
 
-# Role > Client
-class Application
-  
-  def initialize
-  	loop do
-      puts "Which ship do you want to create?"
-      puts "U: UFO"
-      puts "R: Rocket"
-      puts "press any other button to exit."
-    
-      type = gets.strip
-      ship = ShipFactory.create_ship(type)
 
-      ship.nil? ? break : (puts ship.inspect)
-    end
-  end
+# Role > Client
+loop do
+  puts "Which ship do you want to create?"
+  puts "U: UFO"
+  puts "R: Rocket"
+  puts "press any other button to exit."
+
+  type = gets.strip
+  ship = ShipFactory.create_ship(type)
+
+  ship.nil? ? break : (puts ship.inspect)
 end
