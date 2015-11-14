@@ -3,8 +3,8 @@ class Playlist
   attr_accessor :name
 
   def initialize(name)
-  	@name = name
-  	@songlist = []
+    @name = name
+    @songlist = []
   end
 
   def add_song(song)
@@ -12,7 +12,7 @@ class Playlist
   end	
 
   def delete_song(song)
-  	@songlist.delete(song)
+    @songlist.delete(song)
   end	
 
   # role > Internal Iterator

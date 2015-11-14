@@ -3,16 +3,16 @@ class Song
   attr_reader :duration
 
   def initialize(name, duration)
-  	@name = name
-  	@duration = duration
+    @name = name
+    @duration = duration
   end
 
   def duration_time
-  	Time.at(@duration).strftime('%M:%S')
+    Time.at(@duration).strftime('%M:%S')
   end
   
   def <=>(other)
-  	duration <=> other.duration
+    duration <=> other.duration
   end
 end
 
@@ -20,16 +20,16 @@ class Playlist
   include Enumerable
 
   def initialize(name)
-  	@name = name
+    @name = name
     @songlist = []
   end
 
   def each(&block)
-  	@songlist.each(&block)
+    @songlist.each(&block)
   end
 
   def add_song(song)
-  	@songlist << song
+    @songlist << song
   end
 end
 
