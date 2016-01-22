@@ -5,42 +5,42 @@ class CarBuilder
   attr_reader :car
 
   def initialize
-  	@car = Car.new
-  	yield(self) if block_given?
+    @car = Car.new
+    yield(self) if block_given?
   end
 
   def add_body(color)
-  	@car.body = Body.new(color)
+    @car.body = Body.new(color)
   end
 end
 
 class ClassicCarBuilder < CarBuilder
 
   def add_engine
-  	@car.engine = Engine.new
+    @car.engine = Engine.new
   end  
 
   def add_wheels
-  	@car.wheels = Wheels.new
+    @car.wheels = Wheels.new
   end
 
   def add_interior(color)
-  	@car.interior = Interior.new(:leather, color)
+    @car.interior = Interior.new(:leather, color)
   end
 end
 
 class SportCarBuilder < CarBuilder
 
   def add_engine
-  	@car.engine = SportEngine.new
+    @car.engine = SportEngine.new
   end
 
   def add_wheels
-  	@car.wheels = SportWheels.new
+    @car.wheels = SportWheels.new
   end
 
   def add_interior(color)
-  	@car.interior = Interior.new(:sport, color)
+    @car.interior = Interior.new(:sport, color)
   end
 end
 
