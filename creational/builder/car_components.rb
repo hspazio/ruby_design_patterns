@@ -8,7 +8,7 @@ end
 
 class SportEngine < Engine
   def initialize
-  	@capacity = 4_000
+    @capacity = 4_000
   end
 end
 
@@ -16,7 +16,7 @@ class Body
   attr_reader :color
   
   def initialize(color)
-  	@color = color
+    @color = color
   end
 end
 
@@ -39,6 +39,6 @@ end
 
 class SportWheels < Wheels
   def initialize
-  	@size = 19
+    @size = 19
   end
 end
